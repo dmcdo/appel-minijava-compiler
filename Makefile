@@ -23,6 +23,11 @@ Manifest:
 	echo "Main-Class: main.Main" >> Manifest
 	echo "Class-Path: $(SUPPORT)" >> Manifest
 
+support.jar:
+	mkdir -p support/build
+	$(JAVAC) -d support/build support/src/*/*.java
+	$(JAR) cf $@ -C support/build .
+
 javacc:
 	$(JAVACC) -DEBUG_PARSER -OUTPUT_DIRECTORY=parser/ parser/parser.jj
 
@@ -43,4 +48,5 @@ clean:
 	-/bin/rm -f compile.jar
 	-/bin/rm -f checker/*.class
 	-/bin/rm -f checker/error/*.class
+	-/bin/rm -rf support/build
 	chmod -x compile

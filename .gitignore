@@ -1,0 +1,16 @@
+support.jar
+Manifest
+phase12.jar
+*.class
+*.s
+*.o
+/Test
+parser/MiniParser.java
+parser/MiniParserConstants.java
+parser/MiniParserTokenManager.java
+parser/ParseException.java
+parser/SimpleCharStream.java
+parser/Token.java
+parser/TokenMgrError.java
+compile.jar
+support/build
